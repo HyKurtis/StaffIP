@@ -1,0 +1,5 @@
+name: StaffIP
+version: 1.0
+main: com.hyversal.staffip.StaffIPPlugin
+commands:
+  resetip:
