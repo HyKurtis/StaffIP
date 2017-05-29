@@ -30,7 +30,7 @@ public class PlayerListener implements Listener
 					String loggedIp = ipManager.getLoggedIP(player.getUniqueId());
 					String currentIp = e.getAddress().getHostAddress();
 
-					System.out.println(currentIp);
+					System.out.println("IP of staff member (" + player.getName() + "): " + currentIp);
 
 					if (loggedIp != null)
 					{
