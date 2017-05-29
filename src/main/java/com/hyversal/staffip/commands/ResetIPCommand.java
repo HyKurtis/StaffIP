@@ -19,7 +19,7 @@ public class ResetIPCommand implements CommandExecutor
 	{
 		if (sender.hasPermission("staffip.reset"))
 		{
-			IPManager ipManager = StaffIPPlugin.get().getIpManager();
+			IPManager ipManager = StaffIPPlugin.get().getIPManager();
 
 			if (args.length > 0)
 			{

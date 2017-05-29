@@ -17,7 +17,7 @@ public class PlayerListener implements Listener
 	public void onPlayerLogin(PlayerLoginEvent e)
 	{
 		Player player = e.getPlayer();
-		IPManager ipManager = StaffIPPlugin.get().getIpManager();
+		IPManager ipManager = StaffIPPlugin.get().getIPManager();
 
 		if (player.hasPermission("hyversal.staff"))
 		{

@@ -7,14 +7,12 @@ import com.hyversal.staffip.commands.ResetIPCommand;
 import com.hyversal.staffip.listeners.PlayerListener;
 import com.hyversal.staffip.sql.DatabaseAPI;
 
-import lombok.Getter;
-
 public class StaffIPPlugin extends JavaPlugin
 {
 	private static StaffIPPlugin main;
 
-	@Getter private DatabaseAPI databaseAPI;
-	@Getter private IPManager ipManager;
+	private DatabaseAPI databaseAPI;
+	private IPManager ipManager;
 
 	@Override
 	public void onEnable()
@@ -44,6 +42,16 @@ public class StaffIPPlugin extends JavaPlugin
 	public static StaffIPPlugin get()
 	{
 		return main;
+	}
+	
+	public DatabaseAPI getDatabaseAPI()
+	{
+		return databaseAPI;
+	}
+	
+	public IPManager getIPManager()
+	{
+		return ipManager;
 	}
 
 	public void registerListeners()
