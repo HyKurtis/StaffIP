@@ -19,7 +19,7 @@ public class PlayerListener implements Listener
 		Player player = e.getPlayer();
 		IPManager ipManager = StaffIPPlugin.get().getIPManager();
 
-		if (player.hasPermission("hyversal.staff"))
+		if (player.hasPermission("unity.staff"))
 		{
 			new BukkitRunnable()
 			{

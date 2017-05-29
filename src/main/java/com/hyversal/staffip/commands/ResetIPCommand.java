@@ -17,7 +17,7 @@ public class ResetIPCommand implements CommandExecutor
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 	{
-		if (sender.hasPermission("staffip.reset"))
+		if (sender.hasPermission("hyversal.commands.resetip"))
 		{
 			IPManager ipManager = StaffIPPlugin.get().getIPManager();
 
