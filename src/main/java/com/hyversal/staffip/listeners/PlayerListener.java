@@ -4,7 +4,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
-import org.bukkit.event.player.PlayerLoginEvent.Result;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import com.hyversal.staffip.IPManager;
@@ -30,13 +29,18 @@ public class PlayerListener implements Listener
 					String loggedIp = ipManager.getLoggedIP(player.getUniqueId());
 					String currentIp = e.getAddress().getHostAddress();
 
-					System.out.println("IP of staff member (" + player.getName() + "): " + currentIp);
-
 					if (loggedIp != null)
 					{
 						if (!loggedIp.equals(currentIp))
 						{
-							e.disallow(Result.KICK_OTHER, ChatColor.RED + "Your IP is different to your previous IP. \n\n" + ChatColor.RED + "Please contact an admin to have your IP reset.");
+							new BukkitRunnable()
+							{
+								@Override
+								public void run()
+								{
+									player.kickPlayer(ChatColor.RED + "Your IP is different to your previous IP. \n\n" + ChatColor.RED + "Please contact an admin to have your IP reset.");
+								}
+							}.runTask(StaffIPPlugin.get());
 						}
 					}
 					else
